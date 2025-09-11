@@ -1,0 +1,11 @@
+.login-bg {
+    background: #f8f9fa;
+    background-image: url('taubg.jpg');
+    background-size: cover;
+}
+.card {
+    background: rgba(255, 255, 255, 0.207);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 32px rgba(255, 255, 255, 0.08); /* more transparent shadow */
+}
