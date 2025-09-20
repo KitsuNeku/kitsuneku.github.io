@@ -1,0 +1,16 @@
+.portfolio-bg {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+}
+
+.portfolio-card {
+    background: rgba(255,255,255,0.85);
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.navbar.bg-transparent {
+    background: rgba(255,255,255,0.3) !important;
+    backdrop-filter: blur(6px);
+    border-radius: 0 0 1rem 1rem;
+}

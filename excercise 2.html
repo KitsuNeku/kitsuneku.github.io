@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <label form="grades1">Grades:</label>
+     <input type="text" id="grades1" name="grades1"><br>
+        <label form="grades2">Grades:</label>
+        <input type="text" id="grades2" name="grades2"><br>
+        <label form="grades3">Grades:</label>
+        <input type="text" id="grades3" name="grades3"><br>
+        <label form="grades4">Grades:</label>
+        <input type="text" id="grades4" name="grades4"><br>
+        <label form="average">Average:</label>
+        <input type="text" id="average" name="average" readonly>
+        <button onclick="calculateGrades()">Calculate Grades</button>
+        <label for="result"></label>
+        <div id="result"></div>
+        <button onclick="displayResult()">Show Result</button>
+
+    <script>
+        function calculateGrades() {
+            const grades = [
+                parseFloat(document.getElementById("grades1").value) || 0,
+                parseFloat(document.getElementById("grades2").value) || 0,
+                parseFloat(document.getElementById("grades3").value) || 0,
+                parseFloat(document.getElementById("grades4").value) || 0
+            ];
+            const total = grades.reduce((acc, grade) => acc + grade, 0);
+            const average = total / grades.length;
+            document.getElementById("average").value = average.toFixed(2);
+        }
+        function displayResult() {
+            const average = parseFloat(document.getElementById("average").value);
+            let resultText = "";
+            if (isNaN(average)) {
+                resultText = "Invalid";
+            } else if (average >= 90) {
+                resultText = "Excellent";
+            } else if (average >= 80) {
+                resultText = "Very Good";
+            } else if (average >= 70) {
+                resultText = "Good";
+            } else if (average >= 60) {
+                resultText = "Satisfactory";
+            } else {
+                resultText = "Unsatisfactory";
+            }
+            document.getElementById("result").innerText = `Your Grades is: ${resultText}`;
+        }
+        displayResult();
+    </script>
+
+</body>
+</html>
